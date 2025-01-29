@@ -1,17 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void bubbleSort(long int arr[], int n) 
-{
-    for (int i = 0; i < n - 1; i++) 
-    {
-        for (int j = 0; j < n - 1 - i; j++) 
-        {
-            if (arr[j] > arr[j + 1]) 
-            {
-                swap(arr[j], arr[j + 1]);
-            }
+#include <bits/stdc++.h>
+using namespace std;
+
+int partition(long int arr[], int low, int high) {
+    long int pivot = arr[low];
+   long int i = low;
+    long int j = high;
+
+    while (i < j) {
+        while (arr[i] <= pivot && i <= high - 1) {
+            i++;
         }
+
+        while (arr[j] > pivot && j >= low + 1) {
+            j--;
+        }
+        if (i < j) swap(arr[i], arr[j]);
+    }
+    swap(arr[low], arr[j]);
+    return j;
+}
+
+void quickSort(long int arr[], int low, int high) {
+    if (low < high) {
+        int pIndex = partition(arr, low, high);
+        quickSort(arr, low, pIndex - 1);
+        quickSort(arr, pIndex + 1, high);
+        
     }
 }
 
@@ -31,7 +48,7 @@ int main() {
             }
 
             auto start = chrono::high_resolution_clock::now();
-            bubbleSort(arr, n);
+            quickSort(arr, 0, n - 1);
             auto end = chrono::high_resolution_clock::now();
 
             chrono::duration<double> duration = end - start;

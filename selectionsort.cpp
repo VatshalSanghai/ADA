@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void bubbleSort(long int arr[], int n) 
-{
-    for (int i = 0; i < n - 1; i++) 
-    {
-        for (int j = 0; j < n - 1 - i; j++) 
-        {
-            if (arr[j] > arr[j + 1]) 
-            {
-                swap(arr[j], arr[j + 1]);
+void selectionSort(long int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < size; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
             }
+        }
+        if (minIndex != i) {
+            swap(arr[i], arr[minIndex]);
         }
     }
 }
@@ -31,7 +31,7 @@ int main() {
             }
 
             auto start = chrono::high_resolution_clock::now();
-            bubbleSort(arr, n);
+            selectionSort(arr, n);
             auto end = chrono::high_resolution_clock::now();
 
             chrono::duration<double> duration = end - start;
