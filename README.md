@@ -11,6 +11,7 @@ This repository contains C++ implementations of fundamental algorithms and data 
 - [Divide and Conquer](#divide-and-conquer)
 - [Greedy Algorithms](#greedy-algorithms)
 - [Dynamic Programming](#dynamic-programming)
+- [Back Tracking](#back-tracking)
 
 ---
 
