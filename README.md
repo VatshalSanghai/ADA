@@ -75,7 +75,7 @@ These algorithms arrange elements in a particular order (ascending/descending).
 | **Multi-Stage Graph** (`MGP.cpp`) | Solves shortest path problems stage-wise. |
 | **Floyd-Warshall** (`allPairdp.cpp`) | Finds shortest paths between all node pairs (O(n³)). |
 
-## ♟ Backtracking
+##  Backtracking
 
 Backtracking is a technique for solving problems incrementally, building candidates and abandoning a path if it fails to satisfy constraints.
 
